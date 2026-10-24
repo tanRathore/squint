@@ -1,0 +1,16 @@
+{
+  "device_model": 0.45,
+  "factcheck": 0.75,
+  "gptzero": 0.4,
+  "history": 0.5,
+  "hive": 0.82,
+  "jpeg": 0.08,
+  "metadata": 0.95,
+  "provenance": 0.9,
+  "realitydefender": 0.8,
+  "residual": 0.12,
+  "sightengine": 0.68,
+  "spectrum": 0.17,
+  "squint_model": 0.6,
+  "style": 0.12
+}

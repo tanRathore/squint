@@ -1,0 +1,232 @@
+{
+  "n": 382,
+  "auc": 0.9595822405395279,
+  "eer": 0.10242600224803297,
+  "eer_threshold": 0.236,
+  "acc@0.5": 0.9345549738219895,
+  "ece": 0.05497643979057594,
+  "calibration": [
+    {
+      "lo": 0.0,
+      "hi": 0.1,
+      "n": 261,
+      "confidence": 0.055681992337164754,
+      "accuracy": 0.01532567049808429
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.2,
+      "n": 24,
+      "confidence": 0.14366666666666664,
+      "accuracy": 0.08333333333333333
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 14,
+      "confidence": 0.2551428571428571,
+      "accuracy": 0.14285714285714285
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 7,
+      "confidence": 0.3474285714285714,
+      "accuracy": 0.2857142857142857
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 7,
+      "confidence": 0.4558571428571429,
+      "accuracy": 0.2857142857142857
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 10,
+      "confidence": 0.5538000000000001,
+      "accuracy": 0.5
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 4,
+      "confidence": 0.6355,
+      "accuracy": 0.75
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 9,
+      "confidence": 0.7482222222222221,
+      "accuracy": 0.5555555555555556
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 46,
+      "confidence": 0.8674999999999998,
+      "accuracy": 0.9347826086956522
+    }
+  ],
+  "by_source": {
+    "animatediff": {
+      "n": 9,
+      "auc": NaN,
+      "acc": 0.8888888888888888
+    },
+    "anycost_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "bsds500": {
+      "n": 75,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "comfyui": {
+      "n": 14,
+      "auc": NaN,
+      "acc": 0.8571428571428571
+    },
+    "deepfloyd": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "flux": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "hunyuan2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "imagenet": {
+      "n": 139,
+      "auc": NaN,
+      "acc": 0.920863309352518
+    },
+    "infinity": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "interfacegan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kandinsky2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kandinsky3": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kolors2": {
+      "n": 10,
+      "auc": NaN,
+      "acc": 0.6
+    },
+    "min_dalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "mindalle": {
+      "n": 4,
+      "auc": NaN,
+      "acc": 0.75
+    },
+    "motion_director": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 0.6666666666666666
+    },
+    "pix2pixhd": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pixart": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pytorch_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "rudalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sana": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "sd1": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sdxl": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "show_o": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "spade": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sr_benchmarks": {
+      "n": 100,
+      "auc": NaN,
+      "acc": 0.98
+    },
+    "streamdiffusion": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "videocrafter": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "vqgan_clip": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "xflux": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    }
+  },
+  "tiers": {
+    "likely_synthetic": 46,
+    "leaning_human": 304,
+    "leaning_synthetic": 12,
+    "unclear": 20
+  },
+  "unclear_rate": 0.05235602094240838
+}

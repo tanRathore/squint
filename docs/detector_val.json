@@ -1,0 +1,232 @@
+{
+  "n": 382,
+  "auc": 0.9537748220307232,
+  "eer": 0.117740726863994,
+  "eer_threshold": 0.2898043990135193,
+  "acc@0.5": 0.9057591623036649,
+  "ece": 0.062458918957223886,
+  "calibration": [
+    {
+      "lo": 0.0,
+      "hi": 0.1,
+      "n": 263,
+      "confidence": 0.009798089027123124,
+      "accuracy": 0.019011406844106463
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.2,
+      "n": 16,
+      "confidence": 0.14243610249832273,
+      "accuracy": 0.1875
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 7,
+      "confidence": 0.25580791916166035,
+      "accuracy": 0.14285714285714285
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 8,
+      "confidence": 0.3504209779202938,
+      "accuracy": 0.125
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 6,
+      "confidence": 0.43288538853327435,
+      "accuracy": 0.16666666666666666
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 7,
+      "confidence": 0.5506029895373753,
+      "accuracy": 0.2857142857142857
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 6,
+      "confidence": 0.6375615497430166,
+      "accuracy": 0.16666666666666666
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 5,
+      "confidence": 0.7429975867271423,
+      "accuracy": 0.6
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 7,
+      "confidence": 0.8617146526064191,
+      "accuracy": 0.7142857142857143
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.0,
+      "n": 57,
+      "confidence": 0.9841625575433698,
+      "accuracy": 0.8070175438596491
+    }
+  ],
+  "by_source": {
+    "animatediff": {
+      "n": 9,
+      "auc": NaN,
+      "acc": 0.8888888888888888
+    },
+    "anycost_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "bsds500": {
+      "n": 75,
+      "auc": NaN,
+      "acc": 0.9733333333333334
+    },
+    "comfyui": {
+      "n": 14,
+      "auc": NaN,
+      "acc": 0.8571428571428571
+    },
+    "deepfloyd": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "flux": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "hunyuan2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "imagenet": {
+      "n": 139,
+      "auc": NaN,
+      "acc": 0.8561151079136691
+    },
+    "infinity": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "interfacegan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kandinsky2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kandinsky3": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kolors2": {
+      "n": 10,
+      "auc": NaN,
+      "acc": 0.8
+    },
+    "min_dalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "mindalle": {
+      "n": 4,
+      "auc": NaN,
+      "acc": 0.75
+    },
+    "motion_director": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 0.3333333333333333
+    },
+    "pix2pixhd": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pixart": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pytorch_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "rudalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sana": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "sd1": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sdxl": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "show_o": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "spade": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sr_benchmarks": {
+      "n": 100,
+      "auc": NaN,
+      "acc": 0.97
+    },
+    "streamdiffusion": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "videocrafter": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "vqgan_clip": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.5
+    },
+    "xflux": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    }
+  }
+}

@@ -1,0 +1,41 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file: .env
+    environment:
+      SQUINT_DB_URL: postgresql+psycopg://squint:squint@db:5432/squint
+    volumes:
+      - ./models:/models:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  bot:
+    build: .
+    command: ["squint", "bot"]
+    env_file: .env
+    environment:
+      SQUINT_DB_URL: postgresql+psycopg://squint:squint@db:5432/squint
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: squint
+      POSTGRES_PASSWORD: squint
+      POSTGRES_DB: squint
+    volumes:
+      - pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U squint"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  pg:

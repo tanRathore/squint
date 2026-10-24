@@ -1,0 +1,232 @@
+{
+  "n": 382,
+  "auc": 0.9116476208317722,
+  "eer": 0.13464780816785313,
+  "eer_threshold": 0.085,
+  "acc@0.5": 0.9397905759162304,
+  "ece": 0.04208376963350785,
+  "calibration": [
+    {
+      "lo": 0.0,
+      "hi": 0.1,
+      "n": 287,
+      "confidence": 0.0554425087108014,
+      "accuracy": 0.03832752613240418
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.2,
+      "n": 21,
+      "confidence": 0.13604761904761903,
+      "accuracy": 0.14285714285714285
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 13,
+      "confidence": 0.2396923076923077,
+      "accuracy": 0.3076923076923077
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 11,
+      "confidence": 0.34363636363636363,
+      "accuracy": 0.18181818181818182
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 3,
+      "confidence": 0.4526666666666667,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 1,
+      "confidence": 0.568,
+      "accuracy": 1.0
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 7,
+      "confidence": 0.6562857142857144,
+      "accuracy": 1.0
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 6,
+      "confidence": 0.7465,
+      "accuracy": 1.0
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 33,
+      "confidence": 0.8680000000000001,
+      "accuracy": 0.9696969696969697
+    }
+  ],
+  "by_source": {
+    "animatediff": {
+      "n": 9,
+      "auc": NaN,
+      "acc": 0.4444444444444444
+    },
+    "anycost_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "bsds500": {
+      "n": 75,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "comfyui": {
+      "n": 14,
+      "auc": NaN,
+      "acc": 0.9285714285714286
+    },
+    "deepfloyd": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "flux": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "hunyuan2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "imagenet": {
+      "n": 139,
+      "auc": NaN,
+      "acc": 0.9928057553956835
+    },
+    "infinity": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "interfacegan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kandinsky2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kandinsky3": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kolors2": {
+      "n": 10,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "min_dalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "mindalle": {
+      "n": 4,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "motion_director": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "pix2pixhd": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pixart": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pytorch_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "rudalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sana": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sd1": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sdxl": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "show_o": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "spade": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "sr_benchmarks": {
+      "n": 100,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "streamdiffusion": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "videocrafter": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.5
+    },
+    "vqgan_clip": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "xflux": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    }
+  },
+  "tiers": {
+    "leaning_synthetic": 13,
+    "leaning_human": 328,
+    "likely_synthetic": 33,
+    "unclear": 8
+  },
+  "unclear_rate": 0.020942408376963352
+}

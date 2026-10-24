@@ -1,0 +1,35 @@
+<resources>
+    <string name="share_label">squint से जांचें</string>
+    <string name="setup_blurb">किसी भी चीज़ पर पावर बटन दबाकर रखें। एक लंबा कंपन मतलब शायद AI से बना है, दो छोटे मतलब AI के कोई संकेत नहीं, तीन तेज़ टैप मतलब बताना मुश्किल। उसी चीज़ पर दोबारा दबाएँ तो हमें पता चलेगा कि हम गलत थे। कुछ भी सेव नहीं होता: स्क्रीनशॉट मेमोरी में जांचा जाता है और सिर्फ़ एक फ़िंगरप्रिंट रखा जाता है।</string>
+    <string name="step_assistant">squint को अपना डिजिटल असिस्टेंट बनाएँ</string>
+    <string name="step_screenshot">असिस्टेंट को स्क्रीनशॉट लेने दें</string>
+    <string name="step_try">कंपन सीखने के लिए एक नमूने पर आज़माएँ</string>
+    <string name="step_earbuds">ईयरबड लगे हों तो यह एक वाक्य फुसफुसाता भी है</string>
+    <string name="status_ok">हो गया</string>
+    <string name="status_missing">सेटअप बाकी</string>
+    <string name="open_assist_settings">असिस्टेंट सेटिंग खोलें</string>
+    <string name="try_it">तीनों जवाब महसूस करें</string>
+    <string name="tutorial_likely">यह है “शायद AI”: एक लंबा कंपन।</string>
+    <string name="tutorial_unclear">यह है “बताना मुश्किल”: तीन तेज़ टैप।</string>
+    <string name="tutorial_clean">यह है “AI के संकेत नहीं”: दो छोटे।</string>
+    <string name="server_label">सर्वर</string>
+    <string name="speak_label">नतीजा धीरे से बोलकर बताएँ</string>
+    <string name="earcons_label">एक टोन भी बजाएँ (जब फ़ोन मेज़ पर हो)</string>
+    <string name="crop_label">पूरी स्क्रीन नहीं, सिर्फ़ कटा हुआ हिस्सा भेजें</string>
+    <string name="text_label">ईमेल और कैप्शन के लिए स्क्रीन का टेक्स्ट भी शामिल करें</string>
+    <string name="offline_label">कनेक्शन न होने पर सिर्फ़ फ़ोन से जवाब दें</string>
+    <string name="rotate_id">नई गुमनाम आईडी</string>
+    <string name="recent_title">इस फ़ोन पर हाल की जांचें</string>
+    <string name="nothing_yet">अभी कुछ नहीं। किसी चीज़ पर पावर बटन दबाकर रखें।</string>
+    <string name="details_unavailable">इस जाँच का विवरण नहीं मिल सका। शायद यह हटा दी गई है या सर्वर उपलब्ध नहीं है।</string>
+    <string name="wrong">गलत</string>
+    <string name="looking">squint देख रहा है…</string>
+    <string name="could_not_check">जांच नहीं हो सकी</string>
+    <string name="say_need_screenshot">squint को स्क्रीनशॉट की अनुमति चाहिए। चालू करने के लिए squint खोलें।</string>
+    <string name="say_secure_screen">स्क्रीन नहीं देख सका। यह ऐप स्क्रीनशॉट रोकता है।</string>
+    <string name="say_unreachable">squint से संपर्क नहीं हो सका।</string>
+    <string name="models_label">डिवाइस पर मॉडल</string>
+    <string name="model_present">शामिल है</string>
+    <string name="model_absent">शामिल नहीं, सर्वर करता है</string>
+    <string name="cd_status">सेटअप की स्थिति</string>
+</resources>

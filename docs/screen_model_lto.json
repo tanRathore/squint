@@ -1,0 +1,104 @@
+{
+  "n": 1200,
+  "mean_iou": 0.8789582977066511,
+  "iou75": 0.8852889667250438,
+  "cls_acc": 0.8925,
+  "by_template": {
+    "article": {
+      "n": 74,
+      "mean_iou": 0.951,
+      "iou75": 1.0,
+      "cls_acc": 1.0
+    },
+    "chat": {
+      "n": 118,
+      "mean_iou": 0.844,
+      "iou75": 0.831,
+      "cls_acc": 0.814
+    },
+    "email": {
+      "n": 130,
+      "mean_iou": 0.958,
+      "iou75": 0.985,
+      "cls_acc": 0.992
+    },
+    "feed": {
+      "n": 101,
+      "mean_iou": 0.935,
+      "iou75": 1.0,
+      "cls_acc": 0.881
+    },
+    "gallery": {
+      "n": 62,
+      "mean_iou": 0.956,
+      "iou75": 1.0,
+      "cls_acc": 0.935
+    },
+    "grid": {
+      "n": 64,
+      "mean_iou": 0.217,
+      "iou75": 0.0,
+      "cls_acc": 1.0
+    },
+    "landscape": {
+      "n": 53,
+      "mean_iou": 0.932,
+      "iou75": 1.0,
+      "cls_acc": 1.0
+    },
+    "news": {
+      "n": 69,
+      "mean_iou": 0.855,
+      "iou75": 0.855,
+      "cls_acc": 0.841
+    },
+    "none": {
+      "n": 58,
+      "mean_iou": 0.0,
+      "iou75": 0.0,
+      "cls_acc": 1.0
+    },
+    "reddit": {
+      "n": 56,
+      "mean_iou": 0.937,
+      "iou75": 0.982,
+      "cls_acc": 0.946
+    },
+    "reel": {
+      "n": 100,
+      "mean_iou": 0.968,
+      "iou75": 1.0,
+      "cls_acc": 0.74
+    },
+    "story": {
+      "n": 58,
+      "mean_iou": 0.959,
+      "iou75": 1.0,
+      "cls_acc": 0.948
+    },
+    "telegram": {
+      "n": 49,
+      "mean_iou": 0.637,
+      "iou75": 0.327,
+      "cls_acc": 0.531
+    },
+    "tiktok_comments": {
+      "n": 56,
+      "mean_iou": 0.957,
+      "iou75": 0.982,
+      "cls_acc": 0.821
+    },
+    "x": {
+      "n": 94,
+      "mean_iou": 0.937,
+      "iou75": 1.0,
+      "cls_acc": 0.851
+    },
+    "youtube": {
+      "n": 58,
+      "mean_iou": 0.958,
+      "iou75": 1.0,
+      "cls_acc": 1.0
+    }
+  }
+}

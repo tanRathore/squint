@@ -1,0 +1,82 @@
+{
+  "n": 8909,
+  "leave_one_domain_out": {},
+  "in_domain": {
+    "n": 1337
+  },
+  "clean_trained": {
+    "clean": {
+      "auc": 0.9991,
+      "acc": 0.9843,
+      "ece": 0.057
+    },
+    "ocr_noise_03": {
+      "auc": 0.9991,
+      "acc": 0.9791
+    },
+    "ocr_noise_06": {
+      "auc": 0.9984,
+      "acc": 0.9723
+    },
+    "ocr_noise_10": {
+      "auc": 0.9982,
+      "acc": 0.9626
+    },
+    "tesseract": {
+      "n": 240,
+      "auc": 0.9841,
+      "acc": 0.9417
+    },
+    "first_40_words": {
+      "auc": 0.9237,
+      "acc": 0.8355
+    },
+    "first_80_words": {
+      "auc": 0.977,
+      "acc": 0.9117
+    },
+    "first_150_words": {
+      "auc": 0.9925,
+      "acc": 0.9589
+    }
+  },
+  "noise_trained": {
+    "clean": {
+      "auc": 0.9991,
+      "acc": 0.9865,
+      "ece": 0.0393
+    },
+    "ocr_noise_03": {
+      "auc": 0.9992,
+      "acc": 0.985
+    },
+    "ocr_noise_06": {
+      "auc": 0.9984,
+      "acc": 0.9835
+    },
+    "ocr_noise_10": {
+      "auc": 0.9983,
+      "acc": 0.985
+    },
+    "tesseract": {
+      "n": 240,
+      "auc": 0.9842,
+      "acc": 0.9542
+    },
+    "first_40_words": {
+      "auc": 0.923,
+      "acc": 0.8355
+    },
+    "first_80_words": {
+      "auc": 0.9769,
+      "acc": 0.9147
+    },
+    "first_150_words": {
+      "auc": 0.9926,
+      "acc": 0.9604
+    }
+  },
+  "shipped": "noise_trained",
+  "esl_false_positive_lang8": 0.0213,
+  "esl_false_positive_ets": 0.0013
+}

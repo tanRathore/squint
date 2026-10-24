@@ -1,0 +1,179 @@
+{
+  "n": 541,
+  "rules": {
+    "model": {
+      "mean_iou": 0.9358,
+      "iou75": 0.9797
+    },
+    "heuristic": {
+      "mean_iou": 0.8236,
+      "iou75": 0.7172
+    },
+    "snap": {
+      "mean_iou": 0.9358,
+      "iou75": 0.9797
+    },
+    "shipped (iou>=.8 -> heur, else snap)": {
+      "mean_iou": 0.9462,
+      "iou75": 0.9797
+    },
+    "iou>=.6 -> heur, else snap": {
+      "mean_iou": 0.9086,
+      "iou75": 0.8651
+    },
+    "heur if inside model+5% and area>=10%, else shipped": {
+      "mean_iou": 0.926,
+      "iou75": 0.9205
+    },
+    "low kind conf (<.75) -> heur if agree>=.5, else shipped": {
+      "mean_iou": 0.944,
+      "iou75": 0.9686
+    },
+    "mean of model and heur when agree>=.5, else shipped": {
+      "mean_iou": 0.9179,
+      "iou75": 0.9612
+    }
+  },
+  "by_template": {
+    "article": {
+      "model": 0.951,
+      "heuristic": 0.811,
+      "snap": 0.951,
+      "shipped (iou>=.8 -> heur, else snap)": 0.955,
+      "iou>=.6 -> heur, else snap": 0.811,
+      "heur if inside model+5% and area>=10%, else shipped": 0.955,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.955,
+      "mean of model and heur when agree>=.5, else shipped": 0.886
+    },
+    "chat": {
+      "model": 0.84,
+      "heuristic": 0.774,
+      "snap": 0.84,
+      "shipped (iou>=.8 -> heur, else snap)": 0.878,
+      "iou>=.6 -> heur, else snap": 0.913,
+      "heur if inside model+5% and area>=10%, else shipped": 0.896,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.894,
+      "mean of model and heur when agree>=.5, else shipped": 0.895
+    },
+    "email": {
+      "model": 0.968,
+      "heuristic": 0.682,
+      "snap": 0.968,
+      "shipped (iou>=.8 -> heur, else snap)": 0.971,
+      "iou>=.6 -> heur, else snap": 0.766,
+      "heur if inside model+5% and area>=10%, else shipped": 0.959,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.971,
+      "mean of model and heur when agree>=.5, else shipped": 0.815
+    },
+    "feed": {
+      "model": 0.942,
+      "heuristic": 0.899,
+      "snap": 0.942,
+      "shipped (iou>=.8 -> heur, else snap)": 0.965,
+      "iou>=.6 -> heur, else snap": 0.95,
+      "heur if inside model+5% and area>=10%, else shipped": 0.94,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.96,
+      "mean of model and heur when agree>=.5, else shipped": 0.949
+    },
+    "gallery": {
+      "model": 0.962,
+      "heuristic": 0.844,
+      "snap": 0.962,
+      "shipped (iou>=.8 -> heur, else snap)": 0.981,
+      "iou>=.6 -> heur, else snap": 0.949,
+      "heur if inside model+5% and area>=10%, else shipped": 0.964,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.981,
+      "mean of model and heur when agree>=.5, else shipped": 0.959
+    },
+    "landscape": {
+      "model": 0.932,
+      "heuristic": 0.819,
+      "snap": 0.932,
+      "shipped (iou>=.8 -> heur, else snap)": 0.956,
+      "iou>=.6 -> heur, else snap": 0.935,
+      "heur if inside model+5% and area>=10%, else shipped": 0.93,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.956,
+      "mean of model and heur when agree>=.5, else shipped": 0.92
+    },
+    "news": {
+      "model": 0.941,
+      "heuristic": 0.915,
+      "snap": 0.941,
+      "shipped (iou>=.8 -> heur, else snap)": 0.952,
+      "iou>=.6 -> heur, else snap": 0.959,
+      "heur if inside model+5% and area>=10%, else shipped": 0.93,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.952,
+      "mean of model and heur when agree>=.5, else shipped": 0.945
+    },
+    "reddit": {
+      "model": 0.952,
+      "heuristic": 0.865,
+      "snap": 0.952,
+      "shipped (iou>=.8 -> heur, else snap)": 0.962,
+      "iou>=.6 -> heur, else snap": 0.935,
+      "heur if inside model+5% and area>=10%, else shipped": 0.908,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.962,
+      "mean of model and heur when agree>=.5, else shipped": 0.942
+    },
+    "reel": {
+      "model": 0.967,
+      "heuristic": 0.833,
+      "snap": 0.967,
+      "shipped (iou>=.8 -> heur, else snap)": 0.968,
+      "iou>=.6 -> heur, else snap": 0.961,
+      "heur if inside model+5% and area>=10%, else shipped": 0.938,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.958,
+      "mean of model and heur when agree>=.5, else shipped": 0.963
+    },
+    "story": {
+      "model": 0.944,
+      "heuristic": 0.645,
+      "snap": 0.944,
+      "shipped (iou>=.8 -> heur, else snap)": 0.878,
+      "iou>=.6 -> heur, else snap": 0.867,
+      "heur if inside model+5% and area>=10%, else shipped": 0.811,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.872,
+      "mean of model and heur when agree>=.5, else shipped": 0.894
+    },
+    "telegram": {
+      "model": 0.825,
+      "heuristic": 0.919,
+      "snap": 0.825,
+      "shipped (iou>=.8 -> heur, else snap)": 0.873,
+      "iou>=.6 -> heur, else snap": 0.905,
+      "heur if inside model+5% and area>=10%, else shipped": 0.936,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.869,
+      "mean of model and heur when agree>=.5, else shipped": 0.884
+    },
+    "tiktok_comments": {
+      "model": 0.96,
+      "heuristic": 0.854,
+      "snap": 0.96,
+      "shipped (iou>=.8 -> heur, else snap)": 0.923,
+      "iou>=.6 -> heur, else snap": 0.899,
+      "heur if inside model+5% and area>=10%, else shipped": 0.88,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.899,
+      "mean of model and heur when agree>=.5, else shipped": 0.936
+    },
+    "x": {
+      "model": 0.946,
+      "heuristic": 0.925,
+      "snap": 0.946,
+      "shipped (iou>=.8 -> heur, else snap)": 0.967,
+      "iou>=.6 -> heur, else snap": 0.95,
+      "heur if inside model+5% and area>=10%, else shipped": 0.935,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.959,
+      "mean of model and heur when agree>=.5, else shipped": 0.951
+    },
+    "youtube": {
+      "model": 0.957,
+      "heuristic": 0.785,
+      "snap": 0.957,
+      "shipped (iou>=.8 -> heur, else snap)": 0.961,
+      "iou>=.6 -> heur, else snap": 0.945,
+      "heur if inside model+5% and area>=10%, else shipped": 0.904,
+      "low kind conf (<.75) -> heur if agree>=.5, else shipped": 0.961,
+      "mean of model and heur when agree>=.5, else shipped": 0.948
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "n": 191,
+      "hand_tuned": {
+        "auc": 0.9813,
+        "acc": 0.9424
+      },
+      "fitted": {
+        "auc": 0.9824,
+        "acc": 0.9424
+      }
+    },
+    {
+      "fold": 1,
+      "n": 191,
+      "hand_tuned": {
+        "auc": 0.9402,
+        "acc": 0.9267
+      },
+      "fitted": {
+        "auc": 0.9398,
+        "acc": 0.9267
+      }
+    }
+  ],
+  "fitted_weights_win": false,
+  "n": 382
+}

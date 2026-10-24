@@ -1,0 +1,265 @@
+{
+  "n": 364,
+  "auc": 0.9278343949044586,
+  "eer": 0.14006369426751591,
+  "eer_threshold": 0.07602069526910782,
+  "acc@0.5": 0.9093406593406593,
+  "ece": 0.06441975503822511,
+  "calibration": [
+    {
+      "lo": 0.0,
+      "hi": 0.1,
+      "n": 282,
+      "confidence": 0.007404973820931039,
+      "accuracy": 0.03546099290780142
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.2,
+      "n": 9,
+      "confidence": 0.14678687271144655,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 13,
+      "confidence": 0.24827856054672828,
+      "accuracy": 0.15384615384615385
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 7,
+      "confidence": 0.33877500891685486,
+      "accuracy": 0.42857142857142855
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 2,
+      "confidence": 0.43884895741939545,
+      "accuracy": 0.5
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 3,
+      "confidence": 0.5258329113324484,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 4,
+      "confidence": 0.647882804274559,
+      "accuracy": 0.25
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 3,
+      "confidence": 0.7569036285082499,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 5,
+      "confidence": 0.8553481698036194,
+      "accuracy": 0.6
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.0,
+      "n": 36,
+      "confidence": 0.9866925444867876,
+      "accuracy": 0.7777777777777778
+    }
+  ],
+  "by_source": {
+    "animatediff": {
+      "n": 9,
+      "auc": NaN,
+      "acc": 0.8888888888888888
+    },
+    "anycost_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "bsds500": {
+      "n": 75,
+      "auc": NaN,
+      "acc": 0.9866666666666667
+    },
+    "deepfloyd": {
+      "n": 3,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "flux": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "hunyuan2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "imagenet": {
+      "n": 139,
+      "auc": NaN,
+      "acc": 0.9064748201438849
+    },
+    "infinity": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "interfacegan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kandinsky2": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "kandinsky3": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "kolors2": {
+      "n": 10,
+      "auc": NaN,
+      "acc": 0.6
+    },
+    "min_dalle": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "mindalle": {
+      "n": 4,
+      "auc": NaN,
+      "acc": 0.5
+    },
+    "pix2pixhd": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pixart": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "pytorch_gan": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "sana": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "sd1": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sdxl": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 0.0
+    },
+    "show_o": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "spade": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "sr_benchmarks": {
+      "n": 100,
+      "auc": NaN,
+      "acc": 0.97
+    },
+    "streamdiffusion": {
+      "n": 1,
+      "auc": NaN,
+      "acc": 1.0
+    },
+    "videocrafter": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.5
+    },
+    "vqgan_clip": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 0.5
+    },
+    "xflux": {
+      "n": 2,
+      "auc": NaN,
+      "acc": 1.0
+    }
+  },
+  "held_out": {
+    "sources": [
+      "comfyui",
+      "motion_director",
+      "rudalle",
+      "stylegan3"
+    ],
+    "n_synthetic": 130,
+    "auc": 0.8587457128858402,
+    "recall@0.5": 0.5923076923076923,
+    "by_source": {
+      "bsds500": {
+        "n": 75,
+        "auc": NaN,
+        "acc": 0.96
+      },
+      "comfyui": {
+        "n": 96,
+        "auc": NaN,
+        "acc": 0.65625
+      },
+      "imagenet": {
+        "n": 139,
+        "auc": NaN,
+        "acc": 0.8992805755395683
+      },
+      "motion_director": {
+        "n": 21,
+        "auc": NaN,
+        "acc": 0.19047619047619047
+      },
+      "rudalle": {
+        "n": 10,
+        "auc": NaN,
+        "acc": 0.9
+      },
+      "sr_benchmarks": {
+        "n": 100,
+        "auc": NaN,
+        "acc": 0.97
+      },
+      "stylegan3": {
+        "n": 3,
+        "auc": NaN,
+        "acc": 0.3333333333333333
+      }
+    }
+  }
+}

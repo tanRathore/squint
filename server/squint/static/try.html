@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<link rel="manifest" href="/manifest.webmanifest">
+<title>squint</title>
+<style>
+:root { --bg:#0f1115; --fg:#e8e6e1; --mute:#8a8f98; --card:#171a21; --line:#262a33; --ai:#ff5c5c; --mid:#ffb547; --ok:#4cd68a; --un:#9aa3b2; --cap:#5aa9ff; }
+* { box-sizing:border-box }
+html, body { height:100% }
+body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.5 Inter, -apple-system, system-ui, sans-serif; display:flex; flex-direction:column; }
+main { flex:1; display:flex; flex-direction:column; justify-content:center; padding:24px; max-width:520px; margin:0 auto; width:100% }
+h1 { font-size:24px; margin:0 0 6px; font-weight:600 }
+p { color:var(--mute); margin:0 0 20px }
+.big { display:block; width:100%; padding:22px; border-radius:18px; border:none; background:var(--fg); color:var(--bg); font-size:19px; font-weight:600; cursor:pointer }
+.big:active { transform:scale(.98) }
+.verdict { margin-top:24px; padding:20px; border-radius:18px; background:var(--card); border:2px solid var(--line) }
+.verdict h2 { margin:0 0 8px; font-size:22px }
+.verdict .say { color:var(--fg); font-size:18px; margin-bottom:10px }
+.verdict ul { margin:0; padding-left:18px; color:var(--mute); font-size:15px }
+.small { font-size:13px; color:var(--mute); margin-top:18px }
+.row { display:flex; gap:10px; margin-top:14px }
+.row button { flex:1; padding:12px; border-radius:12px; border:1px solid var(--line); background:transparent; color:var(--fg); font-size:15px }
+</style>
+</head>
+<body>
+<main>
+  <h1>squint</h1>
+  <p>Pick a photo, reel or voice note. Your phone buzzes the answer: one long means likely AI, two short means nothing points to AI, three quick means can't tell. Install this page and it shows up in your share sheet as “Check with squint”.</p>
+  <input type="file" id="file" accept="image/*,video/*,audio/*" hidden>
+  <button class="big" id="pick">Check something</button>
+  <div id="out"></div>
+  <div class="small" id="hint"></div>
+</main>
+<script>
+const colors = {likely_synthetic:'var(--ai)', leaning_synthetic:'var(--mid)', unclear:'var(--un)', leaning_human:'var(--ok)', no_ai_signals:'var(--ok)', verified_capture:'var(--cap)'};
+const device = (() => { try { let d = localStorage.getItem('squint-device'); if (!d) { d = crypto.randomUUID(); localStorage.setItem('squint-device', d); } return d; } catch (e) { return 'web-' + Math.random().toString(36).slice(2); } })();
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+function buzz(pattern) {
+  const p = pattern.length && pattern[0] === 0 ? pattern.slice(1) : pattern;
+  if (navigator.vibrate) navigator.vibrate(p);
+}
+function say(text, lang) {
+  if (!('speechSynthesis' in window) || !text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = {en:'en-US', es:'es-ES', pt:'pt-BR', hi:'hi-IN'}[lang] || 'en-US';
+  u.volume = 0.7; u.rate = 1.05;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+function render(v, cached) {
+  const out = document.getElementById('out');
+  out.innerHTML = `<div class="verdict" style="border-color:${colors[v.tier]||'var(--line)'}">
+    <h2>${v.headline}</h2>
+    <div class="say">${v.say}</div>
+    <ul>${(v.evidence||[]).map(e=>`<li>${e}</li>`).join('')}</ul>
+    <div class="row"><button id="wrong">that's wrong</button><button id="again">check another</button></div>
+  </div>`;
+  document.getElementById('wrong').onclick = async () => { await fetch('/v1/feedback', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({check_id: v.check_id, label: 'unsure'})}); buzz([40,60,40]); document.getElementById('wrong').textContent = 'noted, thanks'; };
+  document.getElementById('again').onclick = () => document.getElementById('file').click();
+  if (!cached) { buzz(v.haptic.pattern); say(v.say, v.lang); }
+}
+async function check(file) {
+  const out = document.getElementById('out');
+  out.innerHTML = '<div class="verdict">looking…</div>';
+  buzz([25]);
+  const fd = new FormData(); fd.append('file', file, file.name || 'shared'); fd.append('source_app', 'web'); fd.append('trigger', 'share'); fd.append('lang', (navigator.language||'en').slice(0,2));
+  const r = await fetch('/v1/check', {method:'POST', body: fd, headers: {'X-Device': device}});
+  if (!r.ok) { out.innerHTML = `<div class="verdict">couldn't check that (${r.status})</div>`; buzz([40,70,40,70,40,70,40]); return; }
+  render(await r.json(), false);
+}
+document.getElementById('pick').onclick = () => document.getElementById('file').click();
+document.getElementById('file').onchange = e => { if (e.target.files[0]) check(e.target.files[0]); };
+const params = new URLSearchParams(location.search);
+if (params.get('c')) {
+  fetch('/v1/check/' + params.get('c')).then(r => r.ok ? r.json() : null).then(v => { if (v) render(v, false); });
+}
+document.getElementById('hint').textContent = navigator.vibrate ? 'vibration works in this browser' : 'this browser cannot vibrate, you will see the answer instead';
+</script>
+</body>
+</html>

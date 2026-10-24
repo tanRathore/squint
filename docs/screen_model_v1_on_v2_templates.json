@@ -1,0 +1,109 @@
+{
+  "n": 600,
+  "model_ready": true,
+  "mean_iou_model": 0.8966180343423844,
+  "mean_iou_heuristic": 0.8235946627483843,
+  "iou75_model": 0.8502772643253235,
+  "iou75_heuristic": 0.7171903881700554,
+  "kind_acc": 0.8435754189944135,
+  "ms_model": 54.4,
+  "ms_heuristic": 15.5,
+  "by_template": {
+    "article": {
+      "n": 25,
+      "iou_model": 0.958,
+      "iou_heuristic": 0.811,
+      "kind_acc": 1.0
+    },
+    "chat": {
+      "n": 61,
+      "iou_model": 0.866,
+      "iou_heuristic": 0.774,
+      "kind_acc": 0.812
+    },
+    "email": {
+      "n": 68,
+      "iou_model": 0.97,
+      "iou_heuristic": 0.682,
+      "kind_acc": 1.0
+    },
+    "feed": {
+      "n": 51,
+      "iou_model": 0.968,
+      "iou_heuristic": 0.899,
+      "kind_acc": 0.894
+    },
+    "gallery": {
+      "n": 32,
+      "iou_model": 0.977,
+      "iou_heuristic": 0.844,
+      "kind_acc": 0.903
+    },
+    "grid": {
+      "n": 30,
+      "iou_model": null,
+      "iou_heuristic": null,
+      "kind_acc": 0.0
+    },
+    "landscape": {
+      "n": 29,
+      "iou_model": 0.688,
+      "iou_heuristic": 0.819,
+      "kind_acc": 0.652
+    },
+    "news": {
+      "n": 34,
+      "iou_model": 0.89,
+      "iou_heuristic": 0.915,
+      "kind_acc": 0.939
+    },
+    "none": {
+      "n": 29,
+      "iou_model": null,
+      "iou_heuristic": null,
+      "kind_acc": 1.0
+    },
+    "reddit": {
+      "n": 28,
+      "iou_model": 0.952,
+      "iou_heuristic": 0.865,
+      "kind_acc": 0.926
+    },
+    "reel": {
+      "n": 63,
+      "iou_model": 0.967,
+      "iou_heuristic": 0.833,
+      "kind_acc": 0.8
+    },
+    "story": {
+      "n": 23,
+      "iou_model": 0.884,
+      "iou_heuristic": 0.645,
+      "kind_acc": 0.909
+    },
+    "telegram": {
+      "n": 21,
+      "iou_model": 0.549,
+      "iou_heuristic": 0.919,
+      "kind_acc": 0.714
+    },
+    "tiktok_comments": {
+      "n": 25,
+      "iou_model": 0.623,
+      "iou_heuristic": 0.854,
+      "kind_acc": 0.545
+    },
+    "x": {
+      "n": 59,
+      "iou_model": 0.938,
+      "iou_heuristic": 0.925,
+      "kind_acc": 0.909
+    },
+    "youtube": {
+      "n": 22,
+      "iou_model": 0.964,
+      "iou_heuristic": 0.785,
+      "kind_acc": 1.0
+    }
+  }
+}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>squint</title>
+<style>
+:root { --bg:#0f1115; --fg:#e8e6e1; --mute:#8a8f98; --card:#171a21; --line:#262a33; --ai:#ff5c5c; --mid:#ffb547; --ok:#4cd68a; --un:#9aa3b2; --cap:#5aa9ff; }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 Inter, -apple-system, system-ui, sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:28px 16px 60px; }
+h1 { font-size:22px; font-weight:600; letter-spacing:-.01em; margin:0 0 4px }
+.sub { color:var(--mute); margin-bottom:24px }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:20px }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px }
+.card b { display:block; font-size:26px; font-weight:600 }
+.card span { color:var(--mute); font-size:13px }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px }
+@media (max-width:760px){ .row { grid-template-columns:1fr } }
+.bar { display:flex; height:14px; border-radius:7px; overflow:hidden; background:var(--line); margin:10px 0 6px }
+.bar i { display:block; height:100% }
+.legend { display:flex; flex-wrap:wrap; gap:10px; color:var(--mute); font-size:13px }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:middle }
+svg { width:100%; height:120px; display:block; margin-top:8px }
+table { width:100%; border-collapse:collapse; font-size:13px }
+td, th { padding:6px 4px; border-top:1px solid var(--line); color:var(--mute); text-align:left; font-weight:500 }
+td:first-child { color:var(--fg); font-family:ui-monospace, SFMono-Regular, Menlo, monospace }
+th { color:var(--fg); border-top:none; font-size:12px; text-transform:uppercase; letter-spacing:.04em }
+.pill { display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; background:var(--line); margin-left:8px; vertical-align:middle }
+.dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px }
+.drop { border:1.5px dashed var(--line); border-radius:12px; padding:30px; text-align:center; color:var(--mute); margin-top:20px; cursor:pointer }
+.drop.on { border-color:var(--fg); color:var(--fg) }
+#out { margin-top:16px }
+.verdict { padding:16px; border-radius:12px; background:var(--card); border:1px solid var(--line) }
+.verdict h2 { margin:0 0 6px; font-size:18px }
+.verdict .say { color:var(--mute); margin-bottom:10px }
+.verdict ul { margin:0; padding-left:18px; color:var(--mute) }
+.thumb { float:right; margin:0 0 8px 12px; max-width:140px; border-radius:8px; border:1px solid var(--line) }
+footer { color:var(--mute); font-size:12px; margin-top:40px }
+</style>
+</head>
+<body>
+<main>
+  <h1>squint</h1>
+  <div class="sub">hash-only index. no screenshots are stored, ever. <span id="model" class="pill"></span></div>
+
+  <div class="grid" id="stats"></div>
+
+  <div class="card" style="margin-bottom:16px">
+    <span>checks per hour, last 48h (red = leaning synthetic)</span>
+    <svg id="timeline" viewBox="0 0 960 120" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <span>verdicts</span>
+      <div class="bar" id="tiers"></div>
+      <div class="legend" id="tierlegend"></div>
+    </div>
+    <div class="card">
+      <span>where checks come from</span>
+      <table id="apps"></table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <span>spreading right now (fingerprints checked most in 24h)</span>
+      <table id="trending"></table>
+    </div>
+    <div class="card">
+      <span>detector health</span>
+      <table id="providers"></table>
+    </div>
+  </div>
+
+  <div class="drop" id="drop">drop an image, clip or audio file here to run a check (nothing is kept)</div>
+  <input type="file" id="file" hidden>
+  <div id="out"></div>
+
+  <footer>a verdict is a set of signals, not a fact. every result says what it saw and how sure it is.</footer>
+</main>
+<script>
+const colors = {likely_synthetic:'var(--ai)', leaning_synthetic:'var(--mid)', unclear:'var(--un)', leaning_human:'var(--ok)', no_ai_signals:'var(--ok)', verified_capture:'var(--cap)'};
+const nice = t => (t||'').replace(/_/g,' ');
+function sparkline(rows){
+  const w = 960, h = 120, n = rows.length || 1;
+  const max = Math.max(1, ...rows.map(r=>r.total));
+  const bw = w / n;
+  let s = '';
+  rows.forEach((r,i)=>{
+    const th = r.total/max*(h-10), sh = r.synthetic/max*(h-10);
+    s += `<rect x="${i*bw+1}" y="${h-th}" width="${Math.max(1,bw-2)}" height="${th}" fill="#2f3542"></rect>`;
+    s += `<rect x="${i*bw+1}" y="${h-sh}" width="${Math.max(1,bw-2)}" height="${sh}" fill="#ff5c5c"></rect>`;
+  });
+  return s;
+}
+async function load(){
+  const s = await (await fetch('/v1/stats')).json();
+  document.getElementById('model').textContent = s.screen_model ? 'screen model: on' : 'screen model: heuristic';
+  document.getElementById('stats').innerHTML = [
+    ['checks', s.checks], ['last 24h', s.checks_24h], ['fingerprints', s.items], ['seen more than once', s.repeat_items], ['corrections', Object.values(s.feedback||{}).reduce((a,b)=>a+b,0)]
+  ].map(([k,v])=>`<div class="card"><b>${v}</b><span>${k}</span></div>`).join('');
+  document.getElementById('timeline').innerHTML = sparkline(s.timeline||[]);
+  const total = Object.values(s.tiers).reduce((a,b)=>a+b,0) || 1;
+  document.getElementById('tiers').innerHTML = Object.entries(s.tiers).map(([t,n])=>`<i style="width:${100*n/total}%;background:${colors[t]||'var(--un)'}"></i>`).join('');
+  document.getElementById('tierlegend').innerHTML = Object.entries(s.tiers).map(([t,n])=>`<div><i style="background:${colors[t]||'var(--un)'}"></i>${nice(t)} ${n}</div>`).join('');
+  document.getElementById('apps').innerHTML = Object.entries(s.apps).map(([a,n])=>`<tr><td>${a}</td><td style="text-align:right">${n}</td></tr>`).join('') || '<tr><td>nothing yet</td></tr>';
+  const tr = s.trending||[];
+  document.getElementById('trending').innerHTML = tr.length ? '<tr><th>hash</th><th>24h</th><th>total</th><th>verdict</th><th>apps</th></tr>' + tr.map(r=>`<tr><td>${r.item}</td><td>${r.recent}</td><td>${r.sightings}</td><td><span class="dot" style="background:${colors[r.tier]||'var(--un)'}"></span>${nice(r.tier)}${r.generator?' · '+r.generator:''}</td><td>${Object.keys(r.apps).map(a=>a.split('.').pop()).join(', ')}</td></tr>`).join('') : '<tr><td>nothing spreading yet</td></tr>';
+  const pv = Object.entries(s.providers||{});
+  document.getElementById('providers').innerHTML = pv.length ? '<tr><th>provider</th><th>calls</th><th>failed</th><th>avg ms</th></tr>' + pv.map(([k,d])=>`<tr><td>${k}</td><td>${d.calls}</td><td style="color:${d.failures?'var(--ai)':'inherit'}">${d.failures}</td><td>${d.avg_ms}</td></tr>`).join('') : '<tr><td>no external detectors configured, local signals + index only</td></tr>';
+}
+load();
+setInterval(load, 20000);
+const drop = document.getElementById('drop'), input = document.getElementById('file');
+drop.onclick = () => input.click();
+drop.ondragover = e => { e.preventDefault(); drop.classList.add('on'); };
+drop.ondragleave = () => drop.classList.remove('on');
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove('on'); send(e.dataTransfer.files[0]); };
+input.onchange = () => send(input.files[0]);
+async function send(f){
+  if(!f) return;
+  const out = document.getElementById('out');
+  out.innerHTML = '<div class="verdict">checking…</div>';
+  const fd = new FormData(); fd.append('file', f); fd.append('source_app','dashboard'); fd.append('trigger', f.name.toLowerCase().startsWith('screenshot') ? 'screenshot' : 'upload');
+  const r = await fetch('/v1/check', {method:'POST', body:fd, headers:{'X-Device':'dashboard-'+Math.random().toString(36).slice(2,8)}});
+  if(!r.ok){ out.innerHTML = `<div class="verdict">error ${r.status}: ${await r.text()}</div>`; return; }
+  const v = await r.json();
+  let thumb = '';
+  if (f.type.startsWith('image/')) {
+    const url = URL.createObjectURL(f);
+    thumb = v.region ? `<canvas class="thumb" id="cv"></canvas>` : `<img class="thumb" src="${url}">`;
+    if (v.region) { const img = new Image(); img.onload = () => { const c = document.getElementById('cv'); if(!c) return; const sc = 140/img.width; c.width = 140; c.height = img.height*sc; const g = c.getContext('2d'); g.drawImage(img,0,0,c.width,c.height); g.strokeStyle='#ff2bd6'; g.lineWidth=2; g.strokeRect(v.region[0]*sc, v.region[1]*sc, (v.region[2]-v.region[0])*sc, (v.region[3]-v.region[1])*sc); }; img.src = url; }
+  }
+  out.innerHTML = `<div class="verdict" style="border-color:${colors[v.tier]}">${thumb}
+    <h2>${v.headline}<span class="pill">p=${v.p}</span><span class="pill">${v.confidence} confidence</span><span class="pill">${v.haptic.label}</span>${v.region_kind?`<span class="pill">${v.region_kind}</span>`:''}</h2>
+    <div class="say">“${v.say}”</div>
+    <ul>${v.evidence.map(e=>`<li>${e}</li>`).join('')}</ul>
+    <div style="margin-top:10px;color:var(--mute);font-size:12px">${v.kind} · ${v.ms} ms · ${v.signals.length} signals · phash ${v.phash||'-'}</div>
+  </div>`;
+  load();
+}
+</script>
+</body>
+</html>

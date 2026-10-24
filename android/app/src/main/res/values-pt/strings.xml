@@ -1,0 +1,35 @@
+<resources>
+    <string name="share_label">Checar com squint</string>
+    <string name="setup_blurb">Segure o botão de energia sobre qualquer coisa. Uma vibração longa significa que parece feito por IA, duas curtas que nada aponta para IA, três toques rápidos que não deu para saber. Pressione de novo sobre a mesma coisa para dizer que erramos. Nada é salvo: a captura é verificada na memória e só uma impressão digital fica guardada.</string>
+    <string name="step_assistant">Torne o squint seu assistente digital</string>
+    <string name="step_screenshot">Permita que o assistente use capturas de tela</string>
+    <string name="step_try">Teste com uma amostra para aprender as vibrações</string>
+    <string name="step_earbuds">Com fones, ele também sussurra uma frase</string>
+    <string name="status_ok">pronto</string>
+    <string name="status_missing">falta configurar</string>
+    <string name="open_assist_settings">Abrir ajustes do assistente</string>
+    <string name="try_it">Sinta as três respostas</string>
+    <string name="tutorial_likely">Isto é “provavelmente IA”: uma vibração longa.</string>
+    <string name="tutorial_unclear">Isto é “não dá para saber”: três toques rápidos.</string>
+    <string name="tutorial_clean">Isto é “nada aponta para IA”: duas curtas.</string>
+    <string name="server_label">Servidor</string>
+    <string name="speak_label">Sussurrar o veredito em voz alta</string>
+    <string name="earcons_label">Tocar também um som (para quando o celular está na mesa)</string>
+    <string name="crop_label">Enviar só o recorte, não a tela inteira</string>
+    <string name="text_label">Incluir o texto da tela para e-mails e legendas</string>
+    <string name="offline_label">Responder só pelo celular quando não houver conexão</string>
+    <string name="rotate_id">Novo id anônimo</string>
+    <string name="recent_title">Verificações recentes neste celular</string>
+    <string name="nothing_yet">nada ainda. segure o botão de energia sobre algo.</string>
+    <string name="details_unavailable">Não foi possível obter os detalhes desta verificação. Pode ter sido apagada ou o servidor está fora do ar.</string>
+    <string name="wrong">errado</string>
+    <string name="looking">squint está olhando…</string>
+    <string name="could_not_check">não foi possível checar</string>
+    <string name="say_need_screenshot">O squint precisa da permissão de captura de tela. Abra o squint para ativar.</string>
+    <string name="say_secure_screen">Não consegui ver a tela. Este app bloqueia capturas.</string>
+    <string name="say_unreachable">Não consegui falar com o squint.</string>
+    <string name="models_label">Modelos no aparelho</string>
+    <string name="model_present">incluído</string>
+    <string name="model_absent">não incluído, o servidor faz</string>
+    <string name="cd_status">Estado da configuração</string>
+</resources>

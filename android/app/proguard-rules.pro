@@ -1,0 +1,3 @@
+-keep class ai.onnxruntime.** { *; }
+-dontwarn okhttp3.**
+-dontwarn org.conscrypt.**
